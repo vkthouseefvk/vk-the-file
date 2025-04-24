@@ -7,8 +7,7 @@ logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("imdbpy").setLevel(logging.ERROR)
 
-pyroutils.MIN_CHAT_ID = -999999999999
-pyroutils.MIN_CHANNEL_ID = -100999999999999
+
 
 from pyrogram import Client, _version_, utils as pyroutils
 from pyrogram.raw.all import layer
@@ -24,6 +23,8 @@ import pytz
 from aiohttp import web
 from plugins import web_server
 from sample_info import tempDict
+pyroutils.MIN_CHAT_ID = -999999999999
+pyroutils.MIN_CHANNEL_ID = -100999999999999
 
 class Bot(Client):
 
