@@ -10,7 +10,7 @@ logging.getLogger("imdbpy").setLevel(logging.ERROR)
 pyroutils.MIN_CHAT_ID = -999999999999
 pyroutils.MIN_CHANNEL_ID = -100999999999999
 
-from pyrogram import Client, __version__
+from pyrogram import Client, __version__ , utils as pyroutils
 from pyrogram.raw.all import layer
 from database.ia_filterdb import Media, Media2, choose_mediaDB, db as clientDB
 from database.users_chats_db import db
