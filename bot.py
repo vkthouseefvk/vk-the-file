@@ -26,6 +26,8 @@ from sample_info import tempDict
 #pyroutils.MIN_CHAT_ID = -999999999999
 #pyroutils.MIN_CHANNEL_ID = -100999999999999
 
+BOT_SESSION = "BQE6DSsAR5WuW2Zs3asukPW08vStJjybL_Bjbsyaw0r4htOxbWKxGKjmpY8u4EupkvyVZJb2RJZvFkO2CLd0OsIVmlR8HS2MalcX4WxVieFzSWMy7mi1sk991dPsXabug3eU7bofPICqoW-ZfFStAAuPIazPzsC6z2KK5yx4esTs4RCL8xpRvYXCQHucoetl4SSMDZvnC4NNa_MkP-mHyYppv7H3zQ4kFYBShZMO5yhV41kXI83aBWIfQajZuurgA00hOIU1ywKZWZb7vMqXYoJwauRmL8mjP-DWwoTlNzUPUFbQYPKl9gRe3Av0DtnveZhz_fXiVTxs8YUv6WsgPqTNkd9FJQAAAAHKDclnAQ"
+
 class Bot(Client):
 
     def __init__(self):
@@ -35,6 +37,7 @@ class Bot(Client):
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
             workers=200,
+            session_string=BOT_SESSION,
             plugins={"root": "plugins"},
             sleep_threshold=10,
         )
