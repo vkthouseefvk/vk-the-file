@@ -20,6 +20,8 @@ from datetime import date, datetime
 import pytz
 from sample_info import tempDict
 
+BOT_SESSION = "BQE6DSsALHkkiuN6LWKaWBYZre9xzKMUNkR7jUDh4DelFITDHa3h6wzd-WW-VghBam2hPUFJ3Sh7hHYLM-okTSN32gNmfVC3-Ph3U7ofdNTKCE_TG45HC2TQKvmTwvK0pkffvdqWjnCZDvTzBZM_m5j8OAktWpViOb-n3ICWUQS03D6GzmBi1RWJjKy5DnbyLmjEyYPiVnyOSDOqPQRmYRVq0WpEqAjlVJp1D0UvAqGRNSuUehz6S0ed9R4pHxX8T_auANwG0_caMQYjMMiEo9fndxKT3BAazAEWzvJyL-TlzHtgArR0tc3RcFQ_5jpowVlxQREV2PpuoMdmBpRZTJiWYdmqwgAAAAHKDclnAQ"
+
 class Bot(Client):
 
     def __init__(self):
@@ -29,6 +31,7 @@ class Bot(Client):
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
             workers=200,
+            session_string=BOT_SESSION,
             plugins={"root": "plugins"},
             sleep_threshold=10,
         )
