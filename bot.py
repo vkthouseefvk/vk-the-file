@@ -7,26 +7,20 @@ logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("imdbpy").setLevel(logging.ERROR)
 
-
-
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from database.ia_filterdb import Media, Media2, choose_mediaDB, db as clientDB
 from database.users_chats_db import db
-from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR, LOG_CHANNEL, PORT, SECONDDB_URI
+from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR, LOG_CHANNEL, SECONDDB_URI
 from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 from Script import script 
 from datetime import date, datetime 
 import pytz
-from aiohttp import web
-from plugins import web_server
 from sample_info import tempDict
-#pyroutils.MIN_CHAT_ID = -999999999999
-#pyroutils.MIN_CHANNEL_ID = -100999999999999
 
-BOT_SESSION = "BQE6DSsAr1SNk3StgNNdOTCXOEELh29cvYT_Qf8o8MA0W7h83SwWBzcR7jHamYKsInDCmAZrVL379ShBpkflzO7u-oX_0SvbSu2OO9XxJ-i9Sr4OVrMxpTeQvWi9H5h_S3B_9fuuMnvNzA2IDjVI0qaZNIn1RCVxSR_6vdEEihmxjEYiA4XkVQ0o1R4jJFpZmaAOuq52HSr_Vx6Cvx9lUBtjkbswjAcj_yPrlxPrNcelBkkfd9VO8G9bSXABoIXFMMsyKJzYCHL0LOkMmtiGWPvCnrOTZ6WudOr5IgdixP-Q0qR2WMM9F2tshIK6xkAtEjPYiLUbqQTf8IgQpWRRKmU8198PjwAAAAHKDclnAQ"
+BOT_SESSION = "BQE6DSsALHkkiuN6LWKaWBYZre9xzKMUNkR7jUDh4DelFITDHa3h6wzd-WW-VghBam2hPUFJ3Sh7hHYLM-okTSN32gNmfVC3-Ph3U7ofdNTKCE_TG45HC2TQKvmTwvK0pkffvdqWjnCZDvTzBZM_m5j8OAktWpViOb-n3ICWUQS03D6GzmBi1RWJjKy5DnbyLmjEyYPiVnyOSDOqPQRmYRVq0WpEqAjlVJp1D0UvAqGRNSuUehz6S0ed9R4pHxX8T_auANwG0_caMQYjMMiEo9fndxKT3BAazAEWzvJyL-TlzHtgArR0tc3RcFQ_5jpowVlxQREV2PpuoMdmBpRZTJiWYdmqwgAAAAHKDclnAQ"
 
 class Bot(Client):
 
@@ -75,10 +69,6 @@ class Bot(Client):
         now = datetime.now(tz)
         time = now.strftime("%H:%M:%S %p")
         await self.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
-        app = web.AppRunner(await web_server())
-        await app.setup()
-        bind_address = "0.0.0.0"
-        await web.TCPSite(app, bind_address, PORT).start()
 
     async def stop(self, *args):
         await super().stop()
